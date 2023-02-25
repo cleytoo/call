@@ -15,7 +15,7 @@ export default function ConnectCalendar() {
 
   const handleConnectCalendar = async () => await signIn('google')
 
-  console.log(session)
+  const nextPage = async () => await router.push('time-intervals')
 
   return (
     <Container>
@@ -54,7 +54,7 @@ export default function ConnectCalendar() {
           </AuthError>
         )}
 
-        <Button type="submit" disabled={!isSignedIn}>
+        <Button onClick={nextPage} disabled={!isSignedIn}>
           Próximo passo
           <ArrowRight weight="bold" />
         </Button>
